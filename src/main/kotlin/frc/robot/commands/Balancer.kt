@@ -27,6 +27,7 @@ class Balancer(val swerveDrive: SwerveSubsystem): CommandBase() {
         }
     }
 
+
     fun isBalanced(): Boolean {
         val gyroAngle = pitch
         return gyroAngle in (targetAngle - toleranceDegrees)..(targetAngle + toleranceDegrees)
@@ -35,5 +36,6 @@ class Balancer(val swerveDrive: SwerveSubsystem): CommandBase() {
     override fun end(interrupted: Boolean) {
         swerveDrive.setX()
     }
+
 
 }
